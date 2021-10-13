@@ -1,0 +1,68 @@
+<div class="login-main-div row" >
+    <div class="col-md-4"></div>
+    <mat-card class="col-md-4">
+           
+    <mat-tab-group>
+        <mat-tab label="Student">
+            <mat-card-title>Student Login</mat-card-title>        
+            <form fxLayout="column" class="formdetails">
+              <mat-form-field>
+                 <input matInput [formControl]="username" placeholder="Username">
+                 <mat-error *ngIf="username.invalid">{{getErrorUsername()}}</mat-error>
+              </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [type]="pwToggle.type" placeholder="Password"/>
+                <button mat-icon-button matSuffix appPasswordToggle #pwToggle="appPasswordToggle">
+                  <mat-icon>{{ pwToggle.icon }}</mat-icon>
+                </button>
+            </mat-form-field>
+            <a routerLink="" class="forget-password">Forget Password ?</a>
+            
+                <button mat-raised-button type="submit" routerLink="studenthomepage">Login</button>
+                <button mat-raised-button routerLink="newregister">New Register</button>  
+            </form>
+        </mat-tab>
+        <mat-tab label="Office">
+            <mat-card-title>Office Login</mat-card-title>
+            <form fxLayout="column" class="formdetails">
+                <mat-form-field>
+                   <input matInput [formControl]="username" placeholder="Username">
+                   <mat-error *ngIf="username.invalid">{{getErrorUsername()}}</mat-error>
+                </mat-form-field>
+  
+              <mat-form-field>
+                  <input matInput [type]="pwToggle.type" placeholder="Password"/>
+                  <button mat-icon-button matSuffix appPasswordToggle #pwToggle="appPasswordToggle">
+                    <mat-icon>{{ pwToggle.icon }}</mat-icon>
+                  </button>
+              </mat-form-field>
+              <a routerLink="" class="forget-password">Forget Password ?</a>
+              
+                  <button mat-raised-button type="submit" class="officelogin" routerLink="dropdown">Login</button>
+              </form>
+        </mat-tab>
+        <mat-tab label="Admin">
+            <mat-card-title>Admin Login</mat-card-title>
+            <form fxLayout="column" class="formdetails">
+                <mat-form-field>
+                   <input matInput [formControl]="username" placeholder="Username">
+                   <mat-error *ngIf="username.invalid">{{getErrorUsername()}}</mat-error>
+                </mat-form-field>
+  
+              <mat-form-field>
+                  <input matInput [type]="pwToggle.type" placeholder="Password"/>
+                  <button mat-icon-button matSuffix appPasswordToggle #pwToggle="appPasswordToggle">
+                    <mat-icon>{{ pwToggle.icon }}</mat-icon>
+                  </button>
+              </mat-form-field>
+              <a routerLink="" class="forget-password">Forget Password ?</a>
+              
+                  <button mat-raised-button type="submit" class="adminlogin" routerLink="dropdown">Login</button>
+              </form>
+        </mat-tab>
+    </mat-tab-group>
+         
+    </mat-card>
+    <div class="col-md-4"></div>
+</div>

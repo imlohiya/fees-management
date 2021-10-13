@@ -1,0 +1,25 @@
+<div class="content">	
+	<div class="row card-container">
+        <div class="col-md-4">
+            <label class="cc-course">Course </label>
+            <select placeholder="Course" [(ngModel)]="selectedCourse" (change)="changeCourse($event)">
+                <option>--Choose Course--</option>
+                <option *ngFor="let course of Courses">{{course.name}}</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label class="cc-branch">Branch </label>
+   		    <select placeholder="Branch" (change)="changeBranch($event)">
+		        <option>--Choose Branch--</option>
+			    <option *ngFor="let branch of branches">{{branch.name}}</option>
+		    </select>
+        </div>
+        <div class="col-md-4">
+            <label class="cc-class">Class</label>
+              <select placeholder="Class">
+                <option>--Choose Class--</option>
+                <option *ngFor="let class of classes">{{class}}</option>
+            </select>
+        </div>
+	</div>
+</div>

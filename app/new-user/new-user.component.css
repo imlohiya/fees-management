@@ -1,0 +1,73 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.registration-main-div{
+  margin: 2% 0%;
+  width: 50%;
+  margin-left: 25%;
+}
+mat-card{
+  border: 1px solid black;
+}
+mat-card-title{
+  background:white;
+  color:black ;
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+.student-name .first-name,.student-name .middle-name{
+  width: 31%;
+  margin-top: 2%;
+  margin-right: 3.5%;
+}
+.student-name .last-name{
+  width: 31%;
+}
+mat-label{
+  font-size: 0.90rem;
+}
+mat-radio-button{
+  margin: 2% 3.5%; 
+}
+.student-mob,.dob,.address,.state,.caste,.username,.password{
+  width: 45%;
+  margin-right:10%;
+}
+.parents-mob,.aadharcard,.city,.Country,.addmissiondate,.email,.confirmpassword{
+  width: 45%;
+}
+.new-register,.cancel{
+  width: 40%;
+  background:linear-gradient(135deg, #71b7e6,#9b59b6);
+  margin: 5% 5%;
+  font-size: 1rem;
+  color: black;
+}
+.new-register:hover,.cancel:hover{
+  background:linear-gradient(135deg,#9b59b6, #71b7e6);
+}
+
+@media(max-width: 768px){
+  .registration-main-div{
+      margin: 5% 0%;
+      width: 50%;
+      margin-left: 25%;
+  }
+}
+@media(max-width: 480px){
+  .registration-main-div{
+      margin: 5% 0%;
+      width: 90%;
+      margin-left: 5%;
+  }
+}

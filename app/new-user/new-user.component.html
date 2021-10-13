@@ -1,0 +1,142 @@
+<div class="registration-main-div" >
+    <mat-card >
+        <mat-card-title>Student Registration</mat-card-title>
+        <form fxLayout="column">
+            
+            <div class="student-name">
+                <mat-form-field class="first-name">
+                    <input matInput placeholder="First Name" [formControl]="firstname" required>
+                    <mat-error *ngIf="firstname.invalid">{{getErrorFirstName()}}</mat-error>
+                    <mat-hint *ngIf="firstname.value?.length > 15" align="start">Max 15 characters</mat-hint>                    
+                </mat-form-field>
+                <mat-form-field class="middle-name">
+                    <input matInput placeholder="Middle Name" [formControl]="middlename" required>
+                    <mat-error *ngIf="middlename.invalid">{{getErrorMiddleName()}}</mat-error>
+                    <mat-hint *ngIf="middlename.value?.length > 15" align="start">Max 15 characters</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="last-name">
+                    <input matInput placeholder="Last Name" [formControl]="lastname" required>
+                    <mat-error *ngIf="lastname.invalid">{{getErrorLastName()}}</mat-error>
+                    <mat-hint *ngIf="lastname.value?.length > 15" align="start">Max 15 characters</mat-hint>
+                </mat-form-field>                
+            </div>
+
+            <div class="mobile-number">
+                <mat-form-field class="student-mob">
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput type="number" [formControl]="mobile" required>
+                    <mat-error *ngIf="mobile.invalid">{{getErrorMobile()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="parents-mob">
+                    <mat-label>Parent's Number</mat-label>
+                    <input matInput type="number" [formControl]="parent" required>
+                    <mat-error *ngIf="parent.invalid">{{getErrorParentsMobile()}}</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="dob&aadhar">
+                <mat-form-field class="dob">
+                    <input matInput [matDatepicker]="picker" placeholder="Date of Birth" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="aadharcard">
+                    <input matInput type="number" [formControl]="aadharcard1" placeholder="Aadhar Card Number" required>
+                    <mat-error *ngIf="aadharcard1.invalid">{{getErrorAadhar()}}</mat-error>
+                </mat-form-field>                 
+            </div>
+
+            <div class="maindiv-gender">
+                <mat-radio-group aria-label="Select an option" required >
+                    <mat-label >Gender</mat-label>
+                    <mat-radio-button value="Male">Male</mat-radio-button>
+                    <mat-radio-button value="Female">Female</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <app-cascading-dropdown></app-cascading-dropdown>
+
+            <div class="address-details">
+                <mat-form-field class="address">
+                    <input matInput placeholder="Address" [formControl]="address" required>
+                    <mat-error *ngIf="address.invalid">{{getErrorAddress()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="city">
+                    <input matInput placeholder="City" [formControl]="city" required>
+                    <mat-error *ngIf="city.invalid">{{getErrorCity()}}</mat-error>
+                  </mat-form-field>
+            </div>
+
+            <div class="address-details1">
+                <mat-form-field class="state">
+                    <input matInput placeholder="State" [formControl]="state" required>
+                    <mat-error *ngIf="state.invalid">{{getErrorState()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="Country">
+                    <input matInput placeholder="Country" [formControl]="country" required>
+                    <mat-error *ngIf="country.invalid">{{getErrorCountry()}}</mat-error>
+                  </mat-form-field>
+            </div>
+
+            <div class="caste&addmissiondate">
+                <mat-form-field class="caste">
+                    <mat-label>Select Caste</mat-label>
+                    <mat-select disableRipple>
+                      <mat-option value="1">OPEN</mat-option>
+                      <mat-option value="2">SC</mat-option>
+                      <mat-option value="3">ST</mat-option>
+                      <mat-option value="4">OBC</mat-option>
+                      <mat-option value="5">VJNT</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="addmissiondate">
+                    <input matInput [matDatepicker]="picker1" placeholder="Date of Addmission" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+                                 
+            </div>
+
+            <mat-radio-group aria-label="Select an option" class="hosteloption" required>
+                <mat-label>Hostel Facility : </mat-label>
+                <mat-radio-button value="yes" required>Yes</mat-radio-button>
+                <mat-radio-button value="no" required>No</mat-radio-button>
+            </mat-radio-group>
+            <mat-radio-group aria-label="Select an option" class="busoption" required>
+                <mat-label>Bus Facility : </mat-label>
+                <mat-radio-button value="yes" required>Yes</mat-radio-button>
+                <mat-radio-button value="no" required>No</mat-radio-button>
+            </mat-radio-group>
+    
+            <div class="username&email">
+                <mat-form-field class="username">
+                    <input matInput placeholder="Username" [formControl]="username" required>
+                    <mat-error *ngIf="username.invalid">{{getErrorUsername()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="email">
+                    <mat-label>Enter your email</mat-label>
+                    <input matInput placeholder="abc@example.com" [formControl]="email" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMail()}}</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="password&confirmpassword">     
+                <mat-form-field class="password">
+                    <input matInput [type]="pwToggle.type" placeholder="Password"/>
+                    <button mat-icon-button matSuffix appPasswordToggle #pwToggle="appPasswordToggle">
+                      <mat-icon>{{ pwToggle.icon }}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <mat-form-field class="confirmpassword">
+                    <input matInput type="password" placeholder="Confirm Password" required>
+                </mat-form-field>
+            </div>
+
+            <div class="button">    
+                <button mat-raised-button type="submit" class="new-register">Register</button>
+                <button mat-raised-button routerLink="/" class="cancel">Cancel</button>  
+            </div>
+        </form>    
+    </mat-card>
+</div>

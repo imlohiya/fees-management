@@ -1,0 +1,12 @@
+.container-fluid{
+    background: linear-gradient(135deg, #9b59b6, #71b7e6);
+    width: 100%;
+    border: 0%;
+    margin: 0%;
+    padding: 0%;
+}
+.navbar .navbar-brand{
+    color: white;
+    font-size: 2 rem;
+    padding-left: 2%;
+}

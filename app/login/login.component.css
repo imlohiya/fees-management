@@ -1,0 +1,52 @@
+.login-main-div{
+    margin: 2.8% 0%;
+    width: 80%;
+    margin-left: 10%;
+    height: auto;
+}
+mat-card-title{
+    color:black ;
+    font-size: 1.5rem;
+    width: 100%;
+    margin-top: 8%;
+    text-align: center;
+}
+.formdetails{
+    margin-top: 7%;
+    width: 90%;
+    margin-left: 5%;
+}
+mat-form-field{
+    margin:3% 0%;
+}
+.forget-password{
+    margin-bottom: 15%;
+    text-align: right;
+}
+button{
+    background:linear-gradient(135deg, #71b7e6,#9b59b6);
+    margin: 3% 0%;
+    font-size: 1rem;
+}
+.officelogin,.adminlogin{
+    margin-bottom: 16.9%;
+    margin-top: 7%;
+}
+button:hover{
+    background:linear-gradient(135deg,#9b59b6, #71b7e6);
+}
+
+@media(max-width: 768px){
+    .login-main-div{
+        margin: 5% 0%;
+        width: 50%;
+        margin-left: 25%;
+    }
+}
+@media(max-width: 480px){
+    .login-main-div{
+        margin: 5% 0%;
+        width: 90%;
+        margin-left: 5%;
+    }
+}
